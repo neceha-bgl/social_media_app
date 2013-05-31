@@ -34,6 +34,8 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "email_spec"
+  gem 'cucumber-rails'
+  gem 'capybara'
 end
 
 gem 'jquery-rails'
