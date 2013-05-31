@@ -74,6 +74,9 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    figaro (0.6.4)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     gherkin (2.12.0)
       multi_json (~> 1.3)
     hike (1.2.2)
@@ -167,6 +170,7 @@ DEPENDENCIES
   database_cleaner
   email_spec
   factory_girl_rails (>= 4.2.1)
+  figaro
   jquery-rails
   launchy
   rails (= 3.2.13)
