@@ -20,9 +20,20 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem "rspec-rails", ">= 2.13.2"
+end
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+end
+
+group :test do
+  gem "factory_girl_rails", ">= 4.2.1"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "email_spec"
 end
 
 gem 'jquery-rails'
