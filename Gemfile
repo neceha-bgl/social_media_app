@@ -36,6 +36,7 @@ group :test do
   gem "email_spec"
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'simplecov', :require => false
 end
 
 gem 'jquery-rails'
