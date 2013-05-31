@@ -34,7 +34,7 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "email_spec"
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'simplecov', :require => false
 end
