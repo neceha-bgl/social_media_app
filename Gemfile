@@ -42,6 +42,9 @@ end
 gem 'jquery-rails'
 gem 'figaro'
 gem 'devise'
+gem "cancan"
+gem "rolify"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
