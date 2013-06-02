@@ -44,6 +44,7 @@ gem 'figaro'
 gem 'devise'
 gem "cancan"
 gem "rolify"
+gem 'faker'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
