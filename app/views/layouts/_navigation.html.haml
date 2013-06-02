@@ -1,0 +1,24 @@
+= link_to "Social Media App", root_path, :class => 'brand'
+- if user_signed_in?
+  %ul.nav.pull-right
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        %i.icon-user
+        = current_user.email
+        %b.caret
+      %ul.dropdown-menu
+        = active_link_to icon_tag('Logout','icon-off'), destroy_user_session_path, :method=>'delete', :wrap_tag => :li
+        = active_link_to icon_tag('Edit','icon-edit'), edit_user_registration_path, :wrap_tag => :li
+        = active_link_to icon_tag('Cancel','icon-trash'), cancel_user_registration_path, :wrap_tag => :li
+%ul.nav
+  = active_link_to icon_tag('Home','icon-home'), root_path, :wrap_tag => :li 
+  = active_link_to icon_tag('About','icon-eye-open'), "#" , :wrap_tag => :li
+  = active_link_to icon_tag('Contact','icon-envelope'), "#" , :wrap_tag => :li
+  - if user_signed_in?
+    = active_link_to icon_tag('Logout','icon-off'), destroy_user_session_path, :method=>'delete', :wrap_tag => :li
+  - else
+    = active_link_to icon_tag('Login','icon-user'), new_user_session_path, :wrap_tag => :li
+  - if user_signed_in?
+    = active_link_to icon_tag('Edit account','icon-edit'), edit_user_registration_path, :wrap_tag => :li
+  - else
+    = active_link_to 'Sign up', new_user_registration_path, :wrap_tag => :li

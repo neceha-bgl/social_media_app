@@ -27,6 +27,7 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'haml-rails'
 end
 
 group :test do
@@ -45,7 +46,10 @@ gem 'devise'
 gem "cancan"
 gem "rolify"
 gem 'faker'
-
+gem 'bootstrap-sass'
+gem "active_link_to"
+gem "breadcrumbs_on_rails"
+gem 'simple_form'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
