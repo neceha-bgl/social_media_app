@@ -1,6 +1,9 @@
 SocialMediaApp::Application.routes.draw do
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  authenticated :user do
+    root :to => 'home#index'
+  end
   root :to => "home#index"
 
   # The priority is based upon order of creation:
