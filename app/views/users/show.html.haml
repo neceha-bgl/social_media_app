@@ -1,0 +1,14 @@
+.row
+  .span12
+    %h3 User
+    %hr
+  .span11.offset1
+    %dl.dl-horizontal
+      %dt User
+      %dd= @user.user_name
+      %dt Email 
+      %dd= @user.email if @user.email
+      %dt Registred
+      %dd= @user.created_at.to_date
+      %dt Birthday
+      %dd= @user.birthday

@@ -5,6 +5,8 @@ SocialMediaApp::Application.routes.draw do
     root :to => 'home#index'
   end
   root :to => "home#index"
+  resources :users
+  match "/user/account" => "users#view"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

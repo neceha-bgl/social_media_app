@@ -1,0 +1,12 @@
+#users.row-fluid
+  .span12
+    %table.table.table-condensed.table-hover
+      %thead
+        %tr
+          %th Username
+          %th Email
+          %th Registered
+          %th Birthday
+      %tbody
+      - users.each do |user|
+        = render user
