@@ -8,6 +8,7 @@
         %b.caret
       %ul.dropdown-menu
         = active_link_to icon_tag('Logout','icon-off'), destroy_user_session_path, :method=>'delete', :wrap_tag => :li
+        = active_link_to icon_tag('View','icon-eye-open') , user_account_path, :wrap_tag => :li
         = active_link_to icon_tag('Edit','icon-edit'), edit_user_registration_path, :wrap_tag => :li
         = active_link_to icon_tag('Cancel','icon-trash'), cancel_user_registration_path, :wrap_tag => :li
 %ul.nav
@@ -20,5 +21,15 @@
     = active_link_to icon_tag('Login','icon-user'), new_user_session_path, :wrap_tag => :li
   - if user_signed_in?
     = active_link_to icon_tag('Edit account','icon-edit'), edit_user_registration_path, :wrap_tag => :li
+    - if current_user.has_role? :admin
+      %ul.nav
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.icon-pencil
+            Admin
+            %b.caret
+          %ul.dropdown-menu
+            = active_link_to icon_tag('User','icon-user'), users_path , :wrap_tag => :li
+   
   - else
     = active_link_to 'Sign up', new_user_registration_path, :wrap_tag => :li
