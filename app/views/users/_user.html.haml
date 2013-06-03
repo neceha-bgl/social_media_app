@@ -3,7 +3,8 @@
   %td
     %a{ href: "#",  "data-type" => "text", "data-resource" => "user", "data-name" => "email", "data-url"=> "/users/#{user.id}", "data-original-title" => "Enter email"}= user.email
   %td
-  %td= user.created_at.to_date
+  %td
+    %a{ href: "#", "data-toggle" => "tooltip", title: user.created_at}= user.created_at.to_date
   %td= user.birthday 
   %td
     %a.btn.btn-mini.btn-primary{ "data-toggle" => "modal", href: "#edit-user-#{user.id}", type: "button"}
