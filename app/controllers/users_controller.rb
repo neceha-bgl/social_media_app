@@ -19,6 +19,22 @@ class UsersController < ApplicationController
     add_breadcrumb @user.user_name, @user
   end
 
+  def update
+    authorize! :update, @user, :message => 'Not authorized as an administrator.'
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.update_attributes(params[:user], :as => :admin)
+        format.html {redirect_to :back , :notice => "User updated."}
+ #       format.json {head :no_content}
+        format.js
+      else
+        format.html {redirect_to :back, :alert => "Unable to update user." }
+ #       format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.js
+      end
+    end
+  end
+
   def destroy
     authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
     @user = User.find(params[:id])
