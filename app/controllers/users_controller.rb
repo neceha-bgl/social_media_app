@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   add_breadcrumb "Users", :users_path, :except => :view
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 25)
   end
 
   def view
@@ -25,11 +25,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user], :as => :admin)
         format.html {redirect_to :back , :notice => "User updated."}
- #       format.json {head :no_content}
         format.js
       else
         format.html {redirect_to :back, :alert => "Unable to update user." }
- #       format.json { render json: @user.errors, status: :unprocessable_entity }
         format.js
       end
     end

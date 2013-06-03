@@ -1,5 +1,6 @@
 #users.row-fluid
   .span12
+    = will_paginate(@users, :renderer => WillPaginate::ActionView::LinkRenderer, :class => "pagination pagination-centered")
     %table.table.table-condensed.table-hover
       %thead
         %tr
@@ -10,3 +11,4 @@
       %tbody
       - users.each do |user|
         = render user
+    = will_paginate(@users, :renderer => WillPaginate::ActionView::LinkRenderer, :class => "pagination pagination-centered")

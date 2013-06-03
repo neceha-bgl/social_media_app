@@ -51,6 +51,7 @@ gem "active_link_to"
 gem "breadcrumbs_on_rails"
 gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-will_paginate'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
