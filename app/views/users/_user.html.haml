@@ -3,3 +3,8 @@
   %td= user.email
   %td= user.created_at.to_date
   %td= user.birthday 
+  %td
+    - unless user == current_user
+      %a.btn.btn-mini.btn-danger{ "data-toggle" => "modal", href: "#delete-user-#{user.id}", type: "button"}
+        %i.icon-remove.icon-white
+      = render 'delete_user', :user => user
