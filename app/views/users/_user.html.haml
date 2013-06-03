@@ -1,6 +1,8 @@
 %tr
   %td= link_to user.user_name, user
-  %td= user.email
+  %td
+    %a{ href: "#",  "data-type" => "text", "data-resource" => "user", "data-name" => "email", "data-url"=> "/users/#{user.id}", "data-original-title" => "Enter email"}= user.email
+  %td
   %td= user.created_at.to_date
   %td= user.birthday 
   %td

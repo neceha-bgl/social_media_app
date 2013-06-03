@@ -4,3 +4,4 @@
 jQuery ->
   $('[data-behaviour~=datepicker]').datepicker
     format: 'yyyy-mm-dd'
+  $('[data-resource]').editable()
