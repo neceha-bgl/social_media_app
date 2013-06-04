@@ -55,6 +55,7 @@ gem 'bootstrap-will_paginate'
 gem 'bootstrap-editable-rails'
 gem 'redis'
 gem 'jquery-ui-rails'
+gem 'rack-mini-profiler'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
