@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   add_breadcrumb "Users", :users_path, :except => :view
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.paginate(:page => params[:page], :per_page => 25)
+    term  = params[:search]
+    @users = User.joins(:roles).select("users.*, roles.id as role_id, roles.name as role_name").where("users.user_name like :term or users.first_name like :term or users.last_name like :term", term: "%#{term}%").paginate(:page => params[:page], :per_page => 25)
   end
 
   def view

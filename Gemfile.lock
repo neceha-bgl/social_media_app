@@ -112,6 +112,9 @@ GEM
     jquery-rails (3.0.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.3)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
@@ -148,6 +151,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.4)
     rolify (3.2.0)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
@@ -217,8 +221,10 @@ DEPENDENCIES
   figaro
   haml-rails
   jquery-rails
+  jquery-ui-rails
   launchy
   rails (= 3.2.13)
+  redis
   rolify
   rspec-rails (>= 2.13.2)
   sass-rails (~> 3.2.3)

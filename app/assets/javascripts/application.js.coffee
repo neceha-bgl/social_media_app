@@ -11,12 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery.ui.autocomplete
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
-//= require bootstrap-editable
-//= require bootstrap-editable-rails
-
 //= require_tree .
+

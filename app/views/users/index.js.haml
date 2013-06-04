@@ -1,0 +1,4 @@
+$('#users').html('#{j render("users", users: @users)}');
+$('[data-behaviour~=datepicker]').datepicker({format: 'yyyy-mm-dd'});
+$('[data-resource]').editable();
+
