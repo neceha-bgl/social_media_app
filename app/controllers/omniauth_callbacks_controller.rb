@@ -19,7 +19,7 @@ class OmniauthCallbacksController < ApplicationController
       end
     end
   end
-
+  alias_method :facebook , :create
   def failure
     render 'omniauth_accounts/failure'
   end

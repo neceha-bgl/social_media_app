@@ -140,6 +140,8 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -245,6 +247,7 @@ DEPENDENCIES
   jquery-ui-rails
   launchy
   omniauth
+  omniauth-facebook
   omniauth-oauth2
   rack-mini-profiler
   rails (= 3.2.13)
