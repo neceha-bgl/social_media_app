@@ -21,6 +21,9 @@
     = active_link_to icon_tag('Login','icon-user'), new_user_session_path, :wrap_tag => :li
     %li
       = link_to "Facebook", user_omniauth_authorize_path(:facebook)
+    - if Rails.env.development?
+      %li
+        = link_to "Omniauth dev", user_omniauth_authorize_path(:omniauth_dev)
   - if user_signed_in?
     = active_link_to icon_tag('Edit account','icon-edit'), edit_user_registration_path, :wrap_tag => :li
     - if current_user.has_role? :admin
