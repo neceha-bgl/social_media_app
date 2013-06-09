@@ -1,6 +1,9 @@
 SocialMediaApp::Application.routes.draw do
 
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  get "omniauth_callbacks/create"
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                     controllers: {omniauth_callbacks: "omniauth_callbacks"}
   authenticated :user do
     root :to => 'home#index'
   end

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   rolify
+  include Authentication
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -22,4 +23,7 @@ class User < ActiveRecord::Base
     read_attribute("role_id") || roles.first.id
   end
 
+	def password_required?
+		super && !created_omniauth_origin? 
+	end
 end
