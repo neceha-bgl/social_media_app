@@ -56,6 +56,9 @@ gem 'bootstrap-editable-rails'
 gem 'redis'
 gem 'jquery-ui-rails'
 gem 'rack-mini-profiler'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

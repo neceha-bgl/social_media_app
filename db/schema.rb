@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601132000) do
+ActiveRecord::Schema.define(:version => 20130609155929) do
+
+  create_table "omniauth_accounts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.datetime "expires_at"
+    t.string   "secret"
+    t.integer  "user_id"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -41,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20130601132000) do
     t.string   "last_name"
     t.string   "user_name"
     t.date     "birthday"
+    t.boolean  "omniauth_origin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
