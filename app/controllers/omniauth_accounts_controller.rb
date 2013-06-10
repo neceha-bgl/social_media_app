@@ -1,4 +1,5 @@
 class OmniauthAccountsController < ApplicationController
+  before_filter :refresh, :only => [:show, :account]
 
   def account
     add_breadcrumb "Social accounts", :accounts_path
@@ -37,6 +38,11 @@ class OmniauthAccountsController < ApplicationController
     add_breadcrumb "Omniauth accounts", :omniauth_accounts_path
     term  = params[:search]
     @omniauth_accounts = OmniauthAccount.includes(:user).where("provider like :term", term: "%#{term}%").paginate(:page => params[:page], :per_page => 10)
+  end
+
+  private
+  def refresh
+    @options = params[:refresh] ?  {refresh_cache: true} : {}
   end
 
 end
