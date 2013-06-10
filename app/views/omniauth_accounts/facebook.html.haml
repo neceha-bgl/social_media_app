@@ -3,3 +3,11 @@
   - data[:image] = @omniauth_account.social_media_picture(@options)
   - data[:link] = profile["link"]
   - data[:description] = [profile["name"], "has", @omniauth_account.social_media_friends(@options).size, "friends" ].join(" ")
+
+= nav elements: {profile: "Profile", friends: "Friends"}
+= tab_content do  
+  = tab_pane_profile(elements: @omniauth_account.social_media_profile(@options))
+  = tab_pane(id: "friends", name: "Friends", elements: @omniauth_account.social_media_friends(@options)) do |data, user|
+    - data[:title] = user["name"]
+    - elements = @omniauth_account.social_media_mutualfriends(user["id"], @options)
+    - data[:description] = content_tag(:ul, nil) {raw(elements.map { |e| content_tag(:li, e['name'])}.join(""))}

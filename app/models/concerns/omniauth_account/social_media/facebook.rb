@@ -20,6 +20,11 @@ class OmniauthAccount
       social_media_facebook_client.get_connections(options[:who], "friends")
     end
 
+    def social_media_facebook_mutualfriends(friend_id, options = {})
+      options = {who: "me"}
+      social_media_facebook_client.get_connections(options[:who], "mutualfriends/#{friend_id}")
+    end
+
 	  def social_media_facebook_client
       @social_media_facebook_client = Koala::Facebook::API.new(token)
     end
