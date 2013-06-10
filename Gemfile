@@ -61,6 +61,7 @@ gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
 gem "koala"
 gem 'omniauth-linkedin'
+gem "linkedin"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,0 +1,15 @@
+= hero_unit(profile: @omniauth_account.social_media_profile(@options)) do |data, profile|
+  - data[:title] = "Linkedin"
+  - data[:image] = profile["picture_url"]
+  - data[:link] = profile['site_standard_profile_request']["url"]
+  - data[:description] = [profile["headline"], ".", profile["first_name"], profile["last_name"] , "has", @omniauth_account.social_media_friends["total"], "friends" ].join(" ")
+
+= nav elements: {profile: "Profile", friends: "Friends"} 
+= tab_content do  
+  = tab_pane_profile(elements: @omniauth_account.social_media_profile(@options))
+  = tab_pane(id: "friends", name: "Friends", elements: @omniauth_account.social_media_friends(@options)["all"]) do |data, user|
+    - data[:image] = user['picture_url']
+    - data[:title] = [user["first_name"], user["last_name"]].join(" ")
+    - data[:description] = content_tag(:p,  [user["headline"], "(", user["industry"], ")"].join(" "))
+    - data[:description] << content_tag(:p,  [user["location"]["name"], user["location"]["country"]["code"]].join(" ")) unless user["location"].nil?
+    - data[:link] = user['site_standard_profile_request']["url"] unless user["site_standard_profile_request"].nil?
