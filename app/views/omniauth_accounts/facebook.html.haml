@@ -1,6 +1,6 @@
 = hero_unit(profile: @omniauth_account.social_media_profile(@options)) do |data, profile|
   - data[:title] = "Facebook"
-  - data[:image] = "" 
+  - data[:image] = @omniauth_account.social_media_picture(@options)
   - data[:link] = profile["link"]
   - data[:description] = profile["name"]
 

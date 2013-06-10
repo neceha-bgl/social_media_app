@@ -11,6 +11,10 @@ class OmniauthAccount
       social_media_facebook_client.get_object("me")
     end
 
+    def social_media_facebook_picture(options = {})
+      social_media_facebook_client.get_picture("me")
+    end
+
 	  def social_media_facebook_client
       @social_media_facebook_client = Koala::Facebook::API.new(token)
     end
