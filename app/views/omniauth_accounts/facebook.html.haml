@@ -2,5 +2,4 @@
   - data[:title] = "Facebook"
   - data[:image] = @omniauth_account.social_media_picture(@options)
   - data[:link] = profile["link"]
-  - data[:description] = profile["name"]
-
+  - data[:description] = [profile["name"], "has", @omniauth_account.social_media_friends(@options).size, "friends" ].join(" ")
