@@ -1,0 +1,12 @@
+%table.table.table-condensed.table-hover
+  %thead
+    %tr
+      %th Provider
+      %th Uid
+      %th User
+      %th Registered
+      %th Updated at
+      %th Expires at
+  %tbody
+  - omniauth_accounts.each do |omniauth_account|
+    = render omniauth_account

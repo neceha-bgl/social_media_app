@@ -15,4 +15,12 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def admin_omniauth_account_path omniauth_account
+    if current_user.has_role? :admin
+      omniauth_account_path(omniauth_account.id)
+    else
+      account_path(omniauth_account.provider)
+    end
+  end
+
 end

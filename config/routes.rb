@@ -1,5 +1,9 @@
 SocialMediaApp::Application.routes.draw do
 
+  resources :omniauth_accounts
+  match "/accounts" =>  "omniauth_accounts#accounts"
+  match "/accounts/:provider" =>  "omniauth_accounts#account", :as => :account
+
   get "omniauth_callbacks/create"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},

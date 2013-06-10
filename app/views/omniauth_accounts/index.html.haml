@@ -1,0 +1,6 @@
+%h1 Social media accounts
+#omniauth_accounts.row-fluid
+  .span12
+    = will_paginate(@omniauth_accounts, :renderer => WillPaginate::ActionView::LinkRenderer, :class => "pagination pagination-centered" ,:params => {:search => params[:search]})
+    = render 'omniauth_accounts', omniauth_accounts: @omniauth_accounts
+    = will_paginate(@omniauth_accounts, :renderer => WillPaginate::ActionView::LinkRenderer, :class => "pagination pagination-centered" ,:params => {:search => params[:search]})

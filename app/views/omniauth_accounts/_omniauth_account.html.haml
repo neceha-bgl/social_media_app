@@ -1,0 +1,10 @@
+%tr
+  %td
+    = link_to omniauth_account.provider, admin_omniauth_account_path(omniauth_account)
+  %td= omniauth_account.uid
+  %td= omniauth_account.user_name
+  %td
+    %a{ href: "#", "data-toggle" => "tooltip", title: omniauth_account.created_at}= omniauth_account.created_at.to_date
+  %td
+    %a{ href: "#", "data-toggle" => "tooltip", title: omniauth_account.updated_at}= omniauth_account.updated_at.to_date
+  %td= omniauth_account.expires_at
