@@ -135,6 +135,7 @@ GEM
     multi_json (1.7.4)
     multipart-post (1.2.0)
     nokogiri (1.5.9)
+    oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -146,6 +147,11 @@ GEM
       rack
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
+    omniauth-linkedin (0.1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -253,6 +259,7 @@ DEPENDENCIES
   launchy
   omniauth
   omniauth-facebook
+  omniauth-linkedin
   omniauth-oauth2
   rack-mini-profiler
   rails (= 3.2.13)
