@@ -1,5 +1,6 @@
 class OmniauthAccount < ActiveRecord::Base
   include Authentication
+  include SocialMedia
   belongs_to :user
   validates :provider, :uid, :presence => true
 
