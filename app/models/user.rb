@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     read_attribute("role_id") || roles.first.id
   end
 
+  def email_required?
+		super && !created_omniauth_origin? 
+  end
+
 	def password_required?
 		super && !created_omniauth_origin? 
 	end
