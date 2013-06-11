@@ -1,0 +1,15 @@
+= hero_unit(profile: @omniauth_account.social_media_profile(@options)) do |data, profile|
+  - data[:title] = "Viadeo"
+  - data[:image] = profile["picture_large"]
+  - data[:link] = profile["link"]
+  - data[:description] = [profile["headline"], ".", profile["first_name"], profile["last_name"] , "has", profile["contact_count"], "friends" ].join(" ")
+= nav elements: {profile: "Profile", friends: "Friends", groups: "Groups"}
+= tab_content do  
+  = tab_pane_profile(elements: @omniauth_account.social_media_profile(@options))
+  = tab_pane(id: "friends", name: "Friends", elements: @omniauth_account.social_media_friends(@options)["data"]) do |data, user|
+    - data[:title] = user["name"]
+    - data[:link] = user["link"]
+  = tab_pane(id: "groups", name: "Groups", elements: @omniauth_account.social_media_groups(@options)["data"]) do |data, user|
+    - data[:title] = user["name"]
+    - data[:description] = user["description"]
+    - data[:link] = user["link"]

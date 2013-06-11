@@ -235,6 +235,9 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    viadeo (0.0.2)
+      faraday
+      multi_json
     warden (1.2.1)
       rack (>= 1.0)
     will_paginate (3.0.4)
@@ -284,3 +287,4 @@ DEPENDENCIES
   simplecov
   sqlite3
   uglifier (>= 1.0.3)
+  viadeo
