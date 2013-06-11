@@ -1,0 +1,16 @@
+= hero_unit(profile: @omniauth_account.social_media_profile(@options)) do |data, profile|
+  - data[:title] = "Twitter"
+  - data[:image] = profile["profile_image_url"]
+  - data[:description] = [profile["name"], "has", profile["friends_count"], "fiends and", profile["followers_count"], "followers" ].join(" ")
+
+= nav elements: {profile: "Profile", friends: "Friends", followers: "Followers"}
+= tab_content do  
+  = tab_pane_profile(elements: @omniauth_account.social_media_profile(@options))  
+  = tab_pane(id: :friends, name: "Friends",  elements: @omniauth_account.social_media_friends(@options)) do |data, user|
+    - data[:image] = user['profile_image_url']
+    - data[:title] = content_tag(:h4, user["name"])
+    - data[:url] = user["url"]
+  = tab_pane(id: :followers, name: "Followers", elements: @omniauth_account.social_media_followers(@options)) do |data, user|
+    - data[:image] = user['profile_image_url']
+    - data[:title] = user["name"]
+    - data[:link] = user["url"]

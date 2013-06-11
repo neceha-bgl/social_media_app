@@ -6,6 +6,7 @@ class OmniauthAccount
       include SocialMedia::Facebook
       include SocialMedia::Linkedin
       include SocialMedia::Viadeo
+      include SocialMedia::Twitter
 		end
 
     def social_media(api, rubrique, options, &block)
