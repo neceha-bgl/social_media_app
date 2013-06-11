@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/Pasta/omniauth-viadeo.git
+  revision: 6e531b52237b6aaa56fe922031340a1a2b245d20
+  specs:
+    omniauth-viadeo (0.0.5)
+      omniauth-oauth2 (>= 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +135,10 @@ GEM
       multi_json (~> 1.3)
     launchy (2.3.0)
       addressable (~> 2.3)
+    linkedin (0.4.1)
+      hashie (>= 1.2, < 2.1)
+      multi_json (~> 1.0)
+      oauth (~> 0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -257,10 +268,12 @@ DEPENDENCIES
   jquery-ui-rails
   koala
   launchy
+  linkedin
   omniauth
   omniauth-facebook
   omniauth-linkedin
   omniauth-oauth2
+  omniauth-viadeo!
   rack-mini-profiler
   rails (= 3.2.13)
   redis

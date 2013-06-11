@@ -23,6 +23,8 @@
       = link_to "Facebook", user_omniauth_authorize_path(:facebook)
     %li
       = link_to "Linkedin", user_omniauth_authorize_path(:linkedin)
+    %li
+      = link_to "Viadeo", user_omniauth_authorize_path(:viadeo)
     - if Rails.env.development?
       %li
         = link_to "Omniauth dev", user_omniauth_authorize_path(:omniauth_dev)

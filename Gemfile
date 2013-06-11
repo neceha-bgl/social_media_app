@@ -62,6 +62,7 @@ gem 'omniauth-facebook'
 gem "koala"
 gem 'omniauth-linkedin'
 gem "linkedin"
+gem 'omniauth-viadeo', :git => 'https://github.com/Pasta/omniauth-viadeo.git'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

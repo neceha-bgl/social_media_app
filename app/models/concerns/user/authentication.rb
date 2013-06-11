@@ -14,7 +14,7 @@ class User
 					u.user_name = auth.info.nickname
 					u.first_name = auth.info.first_name
 					u.last_name = auth.info.last_name
-					u.email = auth.info.email
+					u.email = auth.info.email || "#{auth.info.nickname}@socialmediaapp.com"
 					u.omniauth_origin = true
 					u.omniauth_accounts << omniauth_account
 				end

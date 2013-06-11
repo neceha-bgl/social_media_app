@@ -22,6 +22,7 @@ class OmniauthCallbacksController < ApplicationController
   alias_method :facebook , :create
   alias_method :omniauth_dev , :create
   alias_method :linkedin , :create
+  alias_method :viadeo , :create
 
   def failure
     render 'omniauth_accounts/failure'

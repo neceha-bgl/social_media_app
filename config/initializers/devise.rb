@@ -222,7 +222,7 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'] if ENV['FACEBOOK']
   config.omniauth :omniauth_dev, ENV['OMNIAUTH_DEV_KEY'], ENV['OMNIAUTH_DEV_SECRET'] if ENV['OMNIAUTH_DEV']
   config.omniauth :linkedin, ENV['LINKEDIN_KEY'], ENV['LINKEDIN_SECRET'] if ENV['LINKEDIN']
-
+  config.omniauth :viadeo, ENV['VIADEO_KEY'], ENV['VIADEO_SECRET'] if ENV['VIADEO']
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
