@@ -31,7 +31,7 @@ class OmniauthAccount
     end
 
     def default_options
-      {cache: true, refresh_cache: false}
+      {cache: ENV['REDIS_ACTIVATED'].to_bool, refresh_cache: false}
     end
 
     def method_missing(id,*args,&block)
