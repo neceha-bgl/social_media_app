@@ -19,7 +19,7 @@ module OmniauthAccountsHelper
     elements = options.delete(:elements)
     name = options.delete(:name)
     content_tag :div, nil, options.merge(default_options), escape  do
-      content_tag(:div, nil, class: "row-fluid") do
+      content_tag(:div, nil, class: "row") do
         content_tag(:h2, name) +
         content_tag(:dl, nil, class: "dl-horizontal") do
           raw(elements.map { |e|
@@ -36,7 +36,7 @@ module OmniauthAccountsHelper
     elements = options.delete(:elements)
     name = options.delete(:name)
     content_tag :div, nil, options.merge(default_options), escape  do
-      content_tag(:div, nil, class: "row-fluid") do
+      content_tag(:div, nil, class: "row-") do
         content_tag(:h2, name) +
         content_tag(:ul, nil, class: "thumbnails") do
           raw(elements.map { |element|

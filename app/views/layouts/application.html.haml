@@ -11,10 +11,10 @@
   %body{class: [controller_name, action_name ]}
     .navbar.navbar-inverse.navbar-fixed-top
       %nav.navbar-inner
-        .container-fluid
+        .container
           = render 'layouts/navigation'
-    .container-fluid
-      .row-fluid
+    .container
+      .row
         .span3
           - if user_signed_in?
             = render 'layouts/sidebar'
@@ -25,6 +25,6 @@
           = render_breadcrumbs
           = yield
       %footer.footer
-        .container-fluid
+        .container
           = render 'layouts/footer'
 
