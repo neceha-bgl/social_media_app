@@ -1,6 +1,16 @@
+require 'api_constraints'
 SocialMediaApp::Application.routes.draw do
 
   use_doorkeeper
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1) do
+      match 'user', to: 'users#show'
+    end
+
+    scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
+      match 'user', to: 'users#show'
+    end
+  end
 
   resources :omniauth_accounts
   match "/accounts" =>  "omniauth_accounts#accounts"
