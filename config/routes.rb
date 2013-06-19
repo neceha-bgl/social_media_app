@@ -1,5 +1,7 @@
 SocialMediaApp::Application.routes.draw do
 
+  use_doorkeeper
+
   resources :omniauth_accounts
   match "/accounts" =>  "omniauth_accounts#accounts"
   match "/accounts/:provider" =>  "omniauth_accounts#account", :as => :account

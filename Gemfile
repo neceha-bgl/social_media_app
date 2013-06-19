@@ -66,6 +66,7 @@ gem 'omniauth-viadeo', :git => 'https://github.com/Pasta/omniauth-viadeo.git'
 gem "viadeo"
 gem 'omniauth-twitter'
 gem "twitter"
+gem 'doorkeeper'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
