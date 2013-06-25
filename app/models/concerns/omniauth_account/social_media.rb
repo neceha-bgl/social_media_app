@@ -9,23 +9,23 @@ class OmniauthAccount
       include SocialMedia::Twitter
 		end
 
-    def social_media(api, rubrique, options, &block)
+    def social_media(api, rubrique, options)
       logger.debug "Make social media request"
       options = default_options.merge(options)
       return MultiJson.load(MultiJson.dump(yield)) unless options[:cache]
-      return read_cache(api, rubrique, &block) unless options[:refresh_cache]
-      write_cache(api, rubrique, &block)
+      return read_cache(api, rubrique, &Proc.new) unless options[:refresh_cache]
+      write_cache(api, rubrique, &Proc.new)
     end
 
-    def read_cache(api, rubrique, &block)
+    def read_cache(api, rubrique)
       cache = $redis.get("#{api}_omniauth_account_#{id}_#{rubrique}")
-      return write_cache(api, rubrique, &block) unless cache
+      return write_cache(api, rubrique, &Proc.new) unless cache
       MultiJson.load(cache)
     end
 
-    def write_cache(api, rubrique, &block)
+    def write_cache(api, rubrique)
       logger.debug "Write result on cache"
-      data = MultiJson.dump(block.call)
+      data = MultiJson.dump(yield)
       $redis.set("#{api}_omniauth_account_#{id}_#{rubrique}",data)
       return  MultiJson.load(data)
     end
