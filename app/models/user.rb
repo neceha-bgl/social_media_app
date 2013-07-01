@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :omniauth_accounts
+  has_many :venues
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
