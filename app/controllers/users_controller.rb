@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def view
     @user = current_user
     add_breadcrumb @user.user_name, user_account_path
+    @venues = current_user.venues.paginate(:page => params[:page], :per_page => 25)
+    @venue = Venue.new
     render 'show'
   end
 

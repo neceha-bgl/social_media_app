@@ -15,3 +15,10 @@
       %dt Birthday
       %dd
         %a{href: "#", "data-type" => "date", "data-resource" => "user", "data-name" => "birthday", "data-url" => "/users/#{@user.id}", "data-original-title" => "Enter birthday"}= @user.birthday
+.row-fluid
+  .span12
+    %h3 My addresses
+    %a.btn.btn-mini.btn-primary{ "data-toggle" => "modal", href: "#new_venue", type: "button"}
+      %i.icon-plus.icon-white
+    = render 'venues/add', :venue => @venue
+= render 'venues/venues', :venues => @venues 

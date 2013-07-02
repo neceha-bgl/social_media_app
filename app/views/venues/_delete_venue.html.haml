@@ -1,0 +1,9 @@
+.modal{ id: "delete-venue-#{venue.id}", style: "display: none;"}
+  = simple_form_for venue, :url => venue_path(venue), :remote => true, :html => {:method => :delete, :class => 'form-horizontal' } do |f|
+    .modal-header
+      %a.close{ "data-dismiss" => "modal"} &#215;
+      %h3 Delete venue
+    .modal-body Are you sure?
+    .modal-footer
+      = f.submit "Submit", :class => "btn btn-danger"
+      %a.btn{ "data-dismiss" => "modal", href: "#"} Close

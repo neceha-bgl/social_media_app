@@ -1,0 +1,17 @@
+#venues.row-fluid
+  .span12
+    = will_paginate(@venues, :renderer => WillPaginate::ActionView::LinkRenderer, :class => "pagination pagination-centered")
+    %table.table.table-condensed.table-hover
+      %thead
+        %tr
+          %th Id
+          %th Address
+          %th Zipcode
+          %th City
+          %th State
+          %th Registered
+          %th Updated
+          %th
+      %tbody
+      - @venues.each do |venue|
+        = render venue

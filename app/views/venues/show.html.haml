@@ -1,0 +1,24 @@
+.row
+  .span12
+    %h3 Venue
+    %hr
+  .span11.offset1
+    %dl.dl-horizontal
+      %dt Address 
+      %dd
+        %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "address", "data-url"=> "/venues/#{@venue.id}", "data-original-title" => "Enter Address"}= @venue.address
+      %dt Zipcode
+      %dd  
+        %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "zipcode", "data-url"=> "/venues/#{@venue.id}", "data-original-title" => "Enter Zipcode"}= @venue.zipcode
+      %dt City
+      %dd
+        %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "city", "data-url"=> "/venues/#{@venue.id}", "data-original-title" => "Enter City"}= @venue.city
+      %dt State
+      %dd
+        %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "state", "data-url"=> "/venues/#{@venue.id}", "data-original-title" => "Enter State"}= @venue.state
+      %dt Created at
+      %dd
+        %a{ href: "#", "data-toggle" => "tooltip", title: @venue.created_at}= @venue.created_at.to_date
+      %dt Updated at
+      %dd
+        %a{ href: "#", "data-toggle" => "tooltip", title: @venue.updated_at}= @venue.updated_at.to_date

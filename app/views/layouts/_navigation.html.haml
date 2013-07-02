@@ -43,6 +43,7 @@
           %ul.dropdown-menu
             = active_link_to icon_tag('User','icon-user'), users_path , :wrap_tag => :li
             = active_link_to 'Omniauth account', omniauth_accounts_path , :wrap_tag => :li
+            = active_link_to icon_tag('Addresses','icon-envelope'), venues_path , :wrap_tag => :li
    
   - else
     = active_link_to 'Sign up', new_user_registration_path, :wrap_tag => :li

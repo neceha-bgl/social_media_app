@@ -1,0 +1,18 @@
+%tr
+  %td= link_to venue.id, venue
+  %td
+    %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "address", "data-url"=> "/venues/#{venue.id}", "data-original-title" => "Enter Address"}= venue.address
+  %td
+    %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "zipcode", "data-url"=> "/venues/#{venue.id}", "data-original-title" => "Enter Zipcode"}= venue.zipcode
+  %td
+    %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "city", "data-url"=> "/venues/#{venue.id}", "data-original-title" => "Enter City"}= venue.city
+  %td
+    %a{ href: "#",  "data-type" => "text", "data-resource" => "venue", "data-name" => "state", "data-url"=> "/venues/#{venue.id}", "data-original-title" => "Enter State"}= venue.state
+  %td
+    %a{ href: "#", "data-toggle" => "tooltip", title: venue.created_at}= venue.created_at.to_date
+  %td
+    %a{ href: "#", "data-toggle" => "tooltip", title: venue.updated_at}= venue.updated_at.to_date
+  %td
+    %a.btn.btn-mini.btn-danger{ "data-toggle" => "modal", href: "#delete-venue-#{venue.id}", type: "button"}
+      %i.icon-remove.icon-white
+    = render 'venues/delete_venue', :venue => venue

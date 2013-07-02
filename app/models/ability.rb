@@ -32,5 +32,6 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     end
+    can :manage, Venue, :user_id => user.id
   end
 end
