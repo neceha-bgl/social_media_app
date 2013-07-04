@@ -22,3 +22,6 @@
       %dt Updated at
       %dd
         %a{ href: "#", "data-toggle" => "tooltip", title: @venue.updated_at}= @venue.updated_at.to_date
+.row
+  .span12
+    = gmaps4rails(@json)

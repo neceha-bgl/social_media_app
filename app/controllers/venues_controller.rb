@@ -31,6 +31,7 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @json = @venue.to_gmaps4rails
   end
 
   def update

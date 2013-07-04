@@ -18,5 +18,7 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr
 //= require bootstrap-editable
 //= require bootstrap-editable-rails
+//= require gmaps4rails/gmaps4rails.base
+//= require gmaps4rails/gmaps4rails.googlemaps
 
 //= require_tree .
