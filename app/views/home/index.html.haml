@@ -1,2 +1,6 @@
-%h1 User List
+%h1 Venue List
+= form_tag root_path, method: :get, class: "form-inline" do 
+  = text_field_tag :location, params[:location], placeholder: "Location", class: "input-large"
+  = text_field_tag :distance, params[:distance], placeholder: "Distance (km)", class: "input-small"
+  = submit_tag "Search", class: "btn btn-primary"
 = gmaps4rails(@json)
