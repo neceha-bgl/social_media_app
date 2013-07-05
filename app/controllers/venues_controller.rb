@@ -2,9 +2,15 @@ class VenuesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_venue, only: [:show, :update, :destroy]
 
+
+
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @venues = Venue.paginate(:page => params[:page], :per_page => 25)
+    if params[:location].present?
+      @venues = Venue.near(params[:location], params[:distance], order: :distance).paginate(:page => params[:page], :per_page => 25)
+    else
+      @venues = Venue.paginate(:page => params[:page], :per_page => 25)
+    end
   end
 
   def new
