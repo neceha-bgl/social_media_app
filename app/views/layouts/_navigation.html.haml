@@ -14,7 +14,7 @@
 %ul.nav
   = active_link_to icon_tag('Home','icon-home'), root_path, :wrap_tag => :li 
   = active_link_to icon_tag('About','icon-eye-open'), "#" , :wrap_tag => :li
-  = active_link_to icon_tag('Contact','icon-envelope'), "#" , :wrap_tag => :li
+  = active_link_to icon_tag('Contact','icon-envelope'), contact_path , :wrap_tag => :li
   - if user_signed_in?
     = active_link_to icon_tag('Logout','icon-off'), destroy_user_session_path, :method=>'delete', :wrap_tag => :li
   - else

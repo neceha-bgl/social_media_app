@@ -1,0 +1,5 @@
+%h1 Contact us
+= simple_form_for @message, url: contact_path, class: "form-horizontal" do |f|
+  = f.input :subject, placeholder: "Subject", input_html: {class: "input-large"}
+  = f.input :body, placeholder: "Message", as: 'text', input_html: { rows: 5, class: "input-xxlarge"}
+  = f.submit "Send", class: "btn btn-primary"
