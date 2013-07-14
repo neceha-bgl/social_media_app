@@ -1,0 +1,27 @@
+%h1 Listing pages
+
+%table.table.table-condensed.table-hover
+  %tr
+    %th Name
+    %th Permalink
+    %th
+    %th
+    %th
+
+  - @pages.each do |page|
+    %tr
+      %td= page.name
+      %td= page.permalink
+      %td 
+        %a.btn.btn-mini.btn-primary{ href:  page_path(page), type: "button"}
+          %i.icon-eye-open.icon-white
+      %td 
+        %a.btn.btn-mini.btn-primary{href:  edit_page_path(page), type: "button"}
+          %i.icon-edit.icon-white
+      %td
+        %a.btn.btn-mini.btn-danger{:data => { :confirm => 'Are you sure?' , :method => :delete}, href:  page_path(page), type: "button", rel: "nofollow"}
+          %i.icon-remove.icon-white
+
+%br
+
+= link_to 'New Page', new_page_path

@@ -1,0 +1,9 @@
+= simple_form_for(@page) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :permalink
+    = f.input :content, placeholder: "HTML BODY", as: 'text', input_html: { rows: 5, class: "input-xxlarge"}
+  .form-actions
+    = f.button :submit, class: "btn btn-primary"

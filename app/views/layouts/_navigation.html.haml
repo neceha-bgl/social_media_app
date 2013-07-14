@@ -13,11 +13,18 @@
         = active_link_to icon_tag('Cancel','icon-trash'), cancel_user_registration_path, :wrap_tag => :li
 %ul.nav
   = active_link_to icon_tag('Home','icon-home'), root_path, :wrap_tag => :li 
-  = active_link_to icon_tag('About','icon-eye-open'), "#" , :wrap_tag => :li
+  %ul.nav
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        %i.icon-info-sign
+        Info
+        %b.caret
+      %ul.dropdown-menu
+        = active_link_to icon_tag('About','icon-eye-open'), page_path("about") , :wrap_tag => :li
+        = active_link_to icon_tag('Privacy','icon-eye-close'), page_path("privacy") , :wrap_tag => :li
+
   = active_link_to icon_tag('Contact','icon-envelope'), contact_path , :wrap_tag => :li
-  - if user_signed_in?
-    = active_link_to icon_tag('Logout','icon-off'), destroy_user_session_path, :method=>'delete', :wrap_tag => :li
-  - else
+  - if !user_signed_in?
     = active_link_to icon_tag('Login','icon-user'), new_user_session_path, :wrap_tag => :li
     %li
       = link_to icon_tag('Facebook','icon-facebook'), user_omniauth_authorize_path(:facebook)
@@ -31,7 +38,6 @@
       %li
         = link_to "Omniauth dev", user_omniauth_authorize_path(:omniauth_dev)
   - if user_signed_in?
-    = active_link_to icon_tag('Edit account','icon-edit'), edit_user_registration_path, :wrap_tag => :li
     = active_link_to icon_tag('Social media','icon-film') , accounts_path , :wrap_tag => :li
     - if current_user.has_role? :admin
       %ul.nav
@@ -42,8 +48,9 @@
             %b.caret
           %ul.dropdown-menu
             = active_link_to icon_tag('User','icon-user'), users_path , :wrap_tag => :li
-            = active_link_to 'Omniauth account', omniauth_accounts_path , :wrap_tag => :li
+            = active_link_to icon_tag('Omniauth account','icon-film'), omniauth_accounts_path , :wrap_tag => :li
             = active_link_to icon_tag('Addresses','icon-envelope'), venues_path , :wrap_tag => :li
+            = active_link_to icon_tag('Pages','icon-list-alt'), pages_path , :wrap_tag => :li
    
   - else
     = active_link_to 'Sign up', new_user_registration_path, :wrap_tag => :li
